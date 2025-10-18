@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurav Mangate - AI & ML Developer Portfolio</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* --- 1. Global Styles & Variables --- */
+        :root {
+            --bg-dark: #121212;
+            --bg-light: #1e1e1e;
+            --text-primary: #e0e0e0;
+            --text-secondary: #aaaaaa;
+            --accent-blue: #5097fa;
+            --accent-blue-dark: #3a7bd5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* --- 2. Navigation Bar --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #2a2a2a;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-blue);
+        }
+
+        /* --- 3. General Section Styling --- */
+        section {
+            padding: 7rem 5%;
+            min-height: 80vh;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        /* Title underline */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-blue);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- 4. Home Section --- */
+        #home {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            gap: 2rem;
+        }
+
+        .home-content {
+            max-width: 60%;
+        }
+
+        .home-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .home-content h1 span {
+            color: var(--accent-blue);
+        }
+
+        .home-content p {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .home-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: #fff;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--accent-blue-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--text-secondary);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.75rem;
+            margin-right: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .home-image-container {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--accent-blue);
+            box-shadow: 0 0 20px rgba(80, 151, 250, 0.4);
+        }
+
+        .home-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- 5. About Section --- */
+        .about-container {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-cards {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .about-card {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #2a2a2a;
+            text-align: center;
+        }
+
+        .about-card i {
+            font-size: 2rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .about-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .about-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* --- 6. Projects Section --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            border: 1px solid #2a2a2a;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-image-placeholder {
+            height: 200px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-style: italic;
+            overflow: hidden; /* Added to contain the image */
+        }
+        
+        /* --- THIS IS THE NEW RULE TO MAKE YOUR IMAGE FIT --- */
+        .project-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fills the space */
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-tag {
+            background-color: rgba(80, 151, 250, 0.15);
+            color: var(--accent-blue);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-right: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .project-links i {
+            margin-right: 0.5rem;
+        }
+
+        /* --- 7. Skills Section --- */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .skills-category h3 {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-item p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-bar {
+            width: 100%;
+            background-color: var(--bg-light);
+            border-radius: 5px;
+            height: 10px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background-color: var(--accent-blue);
+            border-radius: 5px;
+        }
+        
+        .skill-level.s90 { width: 90%; }
+        .skill-level.s85 { width: 85%; }
+        .skill-level.s80 { width: 80%; }
+        .skill-level.s75 { width: 75%; }
+        .skill-level.s70 { width: 70%; }
+
+        /* --- 8. Contact Section --- */
+        .contact-container {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-card {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #2a2a2a;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--accent-blue);
+        }
+        
+        .contact-card h4 {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+        
+        .contact-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+        
+        .contact-code-sample {
+            flex: 1.2;
+            background-color: #0d1117; /* GitHub dark */
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #30363d;
+        }
+        
+        .code-header {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background-color: #161b22;
+            border-bottom: 1px solid #30363d;
+        }
+        
+        .code-header span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        .code-header .red { background-color: #ff5f56; }
+        .code-header .yellow { background-color: #ffbd2e; }
+        .code-header .green { background-color: #27c93f; }
+        
+        .code-body {
+            padding: 1rem;
+            overflow-x: auto;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+        }
+        
+        .code-body pre {
+            color: #c9d1d9;
+        }
+        
+        /* Syntax Highlighting */
+        .code-body .comment { color: #8b949e; }
+        .code-body .keyword { color: #ff7b72; }
+        .code-body .function { color: #d2a8ff; }
+        .code-body .string { color: #a5d6ff; }
+        .code-body .number { color: #79c0ff; }
+        .code-body .variable { color: #ffa657; }
+        .code-body .class { color: #f0c674; }
+
+
+        /* --- 9. Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--bg-light);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- 10. Responsive Design --- */
+        @media (max-width: 992px) {
+            #home {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 8rem;
+            }
+            .home-content {
+                max-width: 100%;
+            }
+            .home-buttons {
+                justify-content: center;
+            }
+            .social-links {
+                text-align: center;
+            }
+            .about-container {
+                flex-direction: column;
+            }
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* TODO: Add a mobile hamburger menu */
+            }
+            .home-content h1 {
+                font-size: 2.8rem;
+            }
+            .home-content p {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#home" class="nav-logo">Gaurav Mangate</a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <main>
+
+        <section id="home">
+            <div class="home-content">
+                <h1>Hello, I'm <span>Gaurav Mangate</span></h1>
+                <p>An AI and Machine Learning Developer passionate about building intelligent systems and data-driven solutions.</p>
+                <div class="home-buttons">
+                    <a href="https://www.linkedin.com/in/gauravmangate/" class="btn btn-primary" target="_blank">Download Resume</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/gauravmangate/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Gauravmangate27" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/GsMangate_27" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="home-image-container">
+                <img src="gaurav.jpg" alt="Gaurav Mangate"> 
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Get to know me!</p>
+            
+            <div class="about-container">
+                <div class="about-text">
+                    <h3>Who am I?</h3>
+                    <p>
+                        I am an aspiring <strong>AI and Machine Learning Developer</strong> with a strong foundation in deep learning, natural language processing, and data analysis. I specialize in creating intelligent applications, from detecting medical conditions in MRI scans to building smart chatbots and predictive models.
+                    </p>
+                    <p>
+                        My background in software development and my passion for AI drive me to continuously learn and build impactful projects. When I'm not coding, I'm usually exploring new technologies, contributing to open-source, or analyzing data from my latest project.
+                    </p>
+                    <a href="https://www.linkedin.com/in/gauravmangate/" class="btn btn-primary" target="_blank">View My Resume</a>
+                </div>
+                <div class="about-cards">
+                    <div class="about-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Education</h4>
+                        <p>B.Tech Computer Science</p>
+                        <p>DIEMS</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h4>Experience</h4>
+                        <p>Kaggle Expert with strong data science skills</p>
+                        <p>Kaggle</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>Maharastra,India</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">My Projects</h2>
+            <p class="section-subtitle">Here are a few projects I've worked on.</p>
+            
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-image-placeholder"><img src="gs.jpg" alt="Project Logo"></div>
+                    <div class="project-content">
+                        <h3>Brain Tumor Detection</h3>
+                        <p>A deep learning tool to classify MRI scans for tumors. Uses CNNs (and fine-tuned backbones like ResNet) for accurate classification.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Deep Learning</span>
+                            <span class="project-tag">CNN</span>
+                            <span class="project-tag">TensorFlow/Keras</span>
+                            <span class="project-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Gauravmangate27/Brain_tumor_Detection" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image-placeholder"><img src="gs.jpg" alt="Project Logo"></div>
+                    <div class="project-content">
+                        <h3>BitCoin Price Prediction</h3>
+                        <p>A machine learning-driven model for predicting Bitcoin prices based on historical data such as Open, High, Low, and Close prices.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Time Series</span>
+                            <span class="project-tag">Prediction</span>
+                            <span class="project-tag">Jupyter Notebook</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Gauravmangate27/BitCoin-Price-Prediction" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-placeholder"><img src="gs.jpg" alt="Project Logo"></div>
+                    <div class="project-content">
+                        <h3>Potato Disease Classification</h3>
+                        <p>A deep learning application designed to identify and classify diseases in potato plants using images of their leaves.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Deep Learning</span>
+                            <span class="project-tag">CNN</span>
+                            <span class="project-tag">Image Classification</span>
+                            <span class="project-tag">Jupyter Notebook</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Gauravmangate27/Potato-disease-classification" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image-placeholder"><img src="gs.jpg" alt="Project Logo"></div>
+                    <div class="project-content">
+                        <h3>SmartChain Orchestrator</h3>
+                        <p>Automatically fetches emails, reads CSVs, cleans/validates data, saves to PostgreSQL (Supabase), and uses Quadratic AI for insights.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Automation</span>
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">Data Pipeline</span>
+                            <span class="project-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Gauravmangate27/SmartChain_Orchestrator" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-placeholder"><img src="gs.jpg" alt="Project Logo"></div>
+                    <div class="project-content">
+                        <h3>Book Recommendation System</h3>
+                        <p>A Python-based system that analyzes user input and book data (including PDFs) to suggest relevant books, featuring a web interface.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Recommender System</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">NLP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Gauravmangate27/Book_recommendation_gs" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-placeholder"><img src="gs.jpg" alt="Project Logo"></div>
+                    <div class="project-content">
+                        <h3>Olympics Data Analysis Web App</h3>
+                        <p>A web app allowing users to explore and analyze Olympic Games data with interactive visualizations and detailed insights.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Data Analysis</span>
+                            <span class="project-tag">Data Viz</span>
+                            <span class="project-tag">Web App</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Gauravmangate27/olympics-data-analysis-web-app" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-placeholder"><img src="gs.jpg" alt="Project Logo"></div>
+                    <div class="project-content">
+                        <h3>Grade Predictor API</h3>
+                        <p>An ML-based tool to predict student grades based on factors like attendance, study hours, and extracurricular activities.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">API</span>
+                            <span class="project-tag">Prediction</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Gauravmangate27/Grade-Predictor-API-" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-placeholder"><img src="gs.jpg" alt="Project Logo"></div>
+                    <div class="project-content">
+                        <h3>Salary Prediction</h3>
+                        <p>An ML application to predict an individual's salary based on factors such as experience, education level, and job role.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Regression</span>
+                            <span class="project-tag">Jupyter Notebook</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Gauravmangate27/Salary-Prediction" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-placeholder"><img src="gs.jpg" alt="Project Logo"></div>
+                    <div class="project-content">
+                        <h3>Employee Payroll Management System</h3>
+                        <p>A web application for managing employee records, processing salaries, and handling payroll operations.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Web App</span>
+                            <span class="project-tag">Management System</span>
+                            <span class="project-tag">PHP/SQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Gauravmangate27/Employee-Payroll-Management-System" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">My Skills</h2>
+            <p class="section-subtitle">My technical and professional capabilities.</p>
+            
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Programming, Data & AI</h3>
+                    
+                    <div class="skill-item">
+                        <p>Python</p>
+                        <div class="skill-bar"><div class="skill-level s90"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>Deep Learning (TensorFlow, Keras)</p>
+                        <div class="skill-bar"><div class="skill-level s85"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>Machine Learning (Scikit-learn)</p>
+                        <div class="skill-bar"><div class="skill-level s85"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>NLP (LangChain, Transformers)</p>
+                        <div class="skill-bar"><div class="skill-level s75"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>SQL (PostgreSQL, MySQL)</p>
+                        <div class="skill-bar"><div class="skill-level s70"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>HTML, CSS, PHP</p>
+                        <div class="skill-bar"><div class="skill-level s70"></div></div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Tools, Platforms & Professional</h3>
+                    
+                    <div class="skill-item">
+                        <p>Git & GitHub</p>
+                        <div class="skill-bar"><div class="skill-level s90"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>AWS (Deployment)</p>
+                        <div class="skill-bar"><div class="skill-level s70"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>Jupyter Notebook</p>
+                        <div class="skill-bar"><div class="skill-level s85"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>Vector DBs (Pinecone, Supabase)</p>
+                        <div class="skill-bar"><div class="skill-level s70"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>Problem Solving</p>
+                        <div class="skill-bar"><div class="skill-level s90"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <p>Teamwork & Communication</p>
+                        <div class="skill-bar"><div class="skill-level s85"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2 class="section-title">Contact Me</h2>
+            <p class="section-subtitle">Get in touch for any questions or opportunities!</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>Feel free to reach out to me. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                    
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>Gauravmangate27@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Maharastra,India</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-code-sample">
+                    <div class="code-header">
+                        <span class="red"></span>
+                        <span class="yellow"></span>
+                        <span class="green"></span>
+                    </div>
+                    <div class="code-body">
+<pre><span class="comment"># Python ML Code Sample</span>
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+<span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split
+<span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier
+<span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> accuracy_score
+
+<span class="comment"># Load and prepare data</span>
+<span class="variable">X</span>, <span class="variable">y</span> = <span class="function">load_data</span>()
+<span class="variable">X_train</span>, <span class="variable">X_test</span>, <span class="variable">y_train</span>, <span class="variable">y_test</span> = <span class="function">train_test_split</span>(
+    <span class="variable">X</span>, <span class="variable">y</span>, <span class="variable">test_size</span>=<span class="number">0.25</span>, <span class="variable">random_state</span>=<span class="number">42</span>
+)
+
+<span class="comment"># Train model</span>
+<span class="variable">model</span> = <span class="class">RandomForestClassifier</span>(<span class="variable">n_estimators</span>=<span class="number">100</span>)
+<span class="variable">model</span>.<span class="function">fit</span>(<span class="variable">X_train</span>, <span class="variable">y_train</span>)
+
+<span class="comment"># Evaluate</span>
+<span class="variable">preds</span> = <span class="variable">model</span>.<span class="function">predict</span>(<span class="variable">X_test</span>)
+<span class="variable">acc</span> = <span class="function">accuracy_score</span>(<span class="variable">y_test</span>, <span class="variable">preds</span>)
+<span class="function">print</span>(<span class="string">f"Model Accuracy: {acc:.2f}"</span>)</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 by Gaurav Mangate.</p>
+        <p>Thanks for visiting my portfolio website.</p>
+    </footer>
+
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) { // 100px offset
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) {
+                    a.classList.add('active');
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>
