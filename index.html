@@ -52,7 +52,7 @@
         .nl a:hover::after,.nl a.active::after{width:100%}
 
         /* SECTIONS */
-        section{position:relative;z-index:2;padding:7rem 5%;border-bottom:1px solid var(--bd)}
+        section{position:relative;z-index:2;padding:5rem 5%;border-bottom:1px solid var(--bd)}
 
         /* TYPOGRAPHY */
         .lbl{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:.7rem;display:block}
@@ -125,7 +125,7 @@
         .exp-ul li::before{content:'—';position:absolute;left:0;color:var(--teal);font-size:.72rem}
 
         /* PROJECTS */
-        .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.2rem;margin-top:2.5rem}
+        .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin-top:2rem}
         .pc{background:var(--sf);border:1px solid var(--bd);border-radius:13px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s,border-color .35s;position:relative}
         .pc::after{content:'';position:absolute;inset:0;border-radius:13px;background:linear-gradient(135deg,rgba(91,143,212,.04),rgba(40,191,174,.03));opacity:0;transition:opacity .3s;pointer-events:none}
         .pc:hover{transform:translateY(-5px);border-color:rgba(91,143,212,.3);box-shadow:0 14px 42px rgba(0,0,0,.38)}
@@ -145,7 +145,7 @@
         .pl:hover{color:var(--teal)}
 
         /* SKILLS */
-        .skwrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:2.75rem}
+        .skwrap{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2rem}
         .skg h3{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--ink3);margin-bottom:1.6rem;display:flex;align-items:center;gap:.7rem}
         .skg h3::after{content:'';flex:1;height:1px;background:var(--bd)}
         .ski{margin-bottom:1.4rem}
@@ -154,13 +154,13 @@
         .skp{font-family:'DM Mono',monospace;font-size:.72rem;color:var(--teal)}
         .skb{height:4px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden}
         .skf{height:100%;border-radius:4px;width:0;background:var(--gr);transition:width 1.1s cubic-bezier(.4,0,.2,1)}
-        .chips{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-top:2.75rem}
+        .chips{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-top:1.8rem}
         .chip{background:var(--sf);border:1px solid var(--bd);border-radius:9px;padding:.85rem .7rem;text-align:center;font-size:.78rem;font-weight:600;color:var(--ink2);cursor:default;transition:color .25s,border-color .25s,transform .25s,background .25s}
         .chip i{display:block;font-size:1.25rem;margin-bottom:.4rem;color:var(--blue)}
         .chip:hover{color:var(--ink);border-color:var(--blue);transform:translateY(-3px);background:rgba(91,143,212,.07)}
 
         /* CERTS */
-        .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.9rem;margin-top:2.25rem}
+        .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.9rem;margin-top:1.7rem}
         .cc2{background:var(--sf);border:1px solid var(--bd);border-radius:11px;padding:1.15rem 1.35rem;display:flex;align-items:flex-start;gap:1rem;transition:border-color .3s,transform .3s}
         .cc2:hover{border-color:rgba(91,143,212,.32);transform:translateY(-3px)}
         .ccicon{width:38px;height:38px;border-radius:8px;background:rgba(91,143,212,.09);border:1px solid rgba(91,143,212,.18);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--blue);flex-shrink:0}
@@ -168,7 +168,7 @@
         .cc2 p{font-size:.78rem;color:var(--ink2)}
 
         /* CONTACT */
-        .ctwrap{display:grid;grid-template-columns:1fr 1.25fr;gap:3.5rem;margin-top:2.75rem;align-items:start}
+        .ctwrap{display:grid;grid-template-columns:1fr 1.25fr;gap:2.2rem;margin-top:1.9rem;align-items:start}
         .ccs{display:flex;flex-direction:column;gap:.8rem}
         .ccrd{background:var(--sf);border:1px solid var(--bd);border-radius:11px;padding:1rem 1.3rem;display:flex;align-items:center;gap:1rem;transition:border-color .3s,transform .3s}
         .ccrd:hover{border-color:rgba(91,143,212,.32);transform:translateX(5px)}
@@ -184,7 +184,7 @@
         .cm{color:#6e7681}.ck{color:#ff7b72}.cf{color:#d2a8ff}.cs{color:#a5d6ff}.cn{color:#79c0ff}.cv{color:#ffa657}
 
         /* STATS */
-        .srow{display:flex;gap:1.25rem;flex-wrap:wrap;margin-top:1.75rem}
+        .srow{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.2rem}
         .sch{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:.85rem 1.25rem;text-align:center;flex:1;min-width:105px;transition:border-color .3s,transform .3s}
         .sch:hover{border-color:rgba(91,143,212,.32);transform:translateY(-3px)}
         .sch .num{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:var(--teal);line-height:1}
@@ -197,17 +197,33 @@
         /* RESPONSIVE */
         @media(max-width:992px){
             #home{flex-direction:column-reverse;text-align:center;padding-top:9rem;min-height:auto;padding-bottom:4.5rem}
+            section{padding:4rem 5%}
             .htxt{max-width:100%}
             .hbtns,.socs{justify-content:center}
             .skwrap,.ctwrap{grid-template-columns:1fr;gap:2rem}
             .chips{grid-template-columns:repeat(3,1fr)}
-            about-g{grid-template-columns:1fr}
+            .about-g{grid-template-columns:1fr !important;gap:2rem !important}
         }
         @media(max-width:640px){
-            .nl{display:none}
+            body{line-height:1.5}
+            section{padding:3.1rem 5%}
+            nav{padding:.9rem 5%;flex-direction:column;align-items:flex-start;gap:.7rem}
+            .nl{display:flex;gap:.65rem;width:100%;overflow-x:auto;padding-bottom:.2rem}
+            .nl li{flex:0 0 auto}
+            .nl a{font-size:.68rem;padding:.3rem .5rem;border:1px solid var(--bd);border-radius:999px;white-space:nowrap}
+            #home{padding-top:7.5rem;padding-bottom:3.3rem;gap:2rem}
+            .hbtns{margin-top:1.2rem}
+            .socs{margin-top:1.15rem}
+            .pgrid,.cgrid{grid-template-columns:1fr;margin-top:1.4rem}
+            .skwrap,.ctwrap{margin-top:1.4rem;gap:1.5rem}
             .chips{grid-template-columns:repeat(2,1fr)}
             .avimg{width:210px;height:210px}
             .srow{gap:.85rem}
+        }
+
+        @media (hover:none),(pointer:coarse){
+            body{cursor:auto}
+            #cur,#curR,#pc{display:none}
         }
     </style>
 </head>
@@ -255,7 +271,7 @@
     <div class="av">
         <div class="avr1"></div>
         <div class="avr2"></div>
-        <img src="gaurav.jpg" alt="Gaurav Mangate" class="avimg"
+        <img src="profileIcon_m6vu707zasif1.webp" alt="Gaurav Mangate" class="avimg"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div style="display:none;width:258px;height:258px;border-radius:50%;background:var(--sf);border:2px solid var(--blue);align-items:center;justify-content:center;font-size:5rem;font-family:'Fraunces',serif;font-weight:900;color:var(--teal);animation:fl 6s ease-in-out infinite">G</div>
         <div class="avbadge"><i class="fas fa-circle" style="font-size:.5rem"></i> AI &amp; ML Dev</div>
@@ -362,7 +378,8 @@
     <div class="pgrid">
 
         <div class="pc rv" style="transition-delay:.04s">
-            <div class="ptop"><img src="gs.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fas fa-search picon" style="display:none"></i><span class="pnum">01</span></div>
+            <div class="ptop"><img src="https://tse3.mm.bing.net/th/id/OIP.QZRK-F3c7IOfo11ZVClLWwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3
+                "><i class="fas fa-cube picon" style="display:none"></i><span class="pnum">01</span></div>
             <div class="pb">
                 <h3>NovaSearch — Multimodal RAG Engine</h3>
                 <p>Scalable multimodal RAG system for semantic retrieval across large text and image corpora. Real-time ingestion with Kafka and Spark Streaming. Hybrid search via FAISS and Elasticsearch k-NN, orchestrated through LangChain and served via FastAPI.</p>
@@ -372,7 +389,7 @@
         </div>
 
         <div class="pc rv" style="transition-delay:.08s">
-            <div class="ptop"><img src="gs.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fas fa-brain picon" style="display:none"></i><span class="pnum">02</span></div>
+            <div class="ptop"><img src="https://static.vecteezy.com/system/resources/thumbnails/007/100/101/small_2x/tomography-icon-mri-icon-free-vector.jpg"><i class="fas fa-brain picon" style="display:none"></i><span class="pnum">02</span></div>
             <div class="pb">
                 <h3>NeuroScan — Brain Tumor Detection</h3>
                 <p>ResNet and EfficientNet models trained on 10,000+ MRI scans with 99% classification accuracy. Advanced preprocessing for noise reduction, regularization for generalization, predictions served via a secure Flask API for clinical integration.</p>
@@ -382,7 +399,7 @@
         </div>
 
         <div class="pc rv" style="transition-delay:.12s">
-            <div class="ptop"><img src="gs.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fas fa-stethoscope picon" style="display:none"></i><span class="pnum">03</span></div>
+            <div class="ptop"><img src="https://static.vecteezy.com/system/resources/previews/014/526/535/non_2x/chatbot-sms-icon-simple-style-vector.jpg"><i class="fas fa-robot picon" style="display:none"></i><span class="pnum">03</span></div>
             <div class="pb">
                 <h3>MediBot — LLM Healthcare Assistant</h3>
                 <p>LLM-based healthcare assistant automating routine patient interactions. Domain-specific NLP pipelines, contextual grounding to minimize errors, structured prompt templates for multi-turn context, Flask web interface for real-time interaction.</p>
@@ -392,7 +409,7 @@
         </div>
 
         <div class="pc rv" style="transition-delay:.16s">
-            <div class="ptop"><img src="gs.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fas fa-network-wired picon" style="display:none"></i><span class="pnum">04</span></div>
+            <div class="ptop"><img src="https://static.vecteezy.com/system/resources/previews/026/453/487/non_2x/orchestration-icon-vector.jpg"><i class="fas fa-cogs picon" style="display:none"></i><span class="pnum">04</span></div>
             <div class="pb">
                 <h3>SmartChain Orchestrator</h3>
                 <p>Fully automated supply chain analytics pipeline eliminating manual intervention. CSV ingestion via n8n workflows, structured storage in PostgreSQL (Supabase), Quadratic AI for actionable insights and automated reports.</p>
@@ -402,7 +419,7 @@
         </div>
 
         <div class="pc rv" style="transition-delay:.20s">
-            <div class="ptop"><img src="gs.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fab fa-bitcoin picon" style="display:none"></i><span class="pnum">05</span></div>
+            <div class="ptop"><img src="https://static.vecteezy.com/system/resources/previews/051/717/796/non_2x/bitcoin-price-chart-with-arrows-and-a-bitcoin-symbol-free-vector.jpg"><i class="fab fa-bitcoin picon" style="display:none"></i><span class="pnum">05</span></div>
             <div class="pb">
                 <h3>Bitcoin Price Prediction</h3>
                 <p>Time-series forecasting of Bitcoin prices using historical OHLC data. Models include ARIMA, LSTM, and Prophet for robust multi-horizon predictions.</p>
@@ -412,7 +429,7 @@
         </div>
 
         <div class="pc rv" style="transition-delay:.24s">
-            <div class="ptop"><img src="gs.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fas fa-leaf picon" style="display:none"></i><span class="pnum">06</span></div>
+            <div class="ptop"><img src="https://tse1.mm.bing.net/th/id/OIP.hvCwvgqg56aCtq2uCUB5tAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"><i class="fas fa-leaf picon" style="display:none"></i><span class="pnum">06</span></div>
             <div class="pb">
                 <h3>Potato Disease Classification</h3>
                 <p>CNN-based image classification of potato plant diseases from leaf imagery, with a web interface for real-time inference and agricultural diagnosis support.</p>
@@ -422,7 +439,7 @@
         </div>
 
         <div class="pc rv" style="transition-delay:.28s">
-            <div class="ptop"><img src="gs.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fas fa-book picon" style="display:none"></i><span class="pnum">07</span></div>
+            <div class="ptop"><img src="https://th.bing.com/th/id/OIP.CIF46izv7FkDRkhzAol_-gHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fas fa-book-open picon" style="display:none"></i><span class="pnum">07</span></div>
             <div class="pb">
                 <h3>Book Recommendation System</h3>
                 <p>NLP-powered recommendation engine analyzing user inputs and book data — including PDFs — to surface relevant titles, with a web interface frontend.</p>
@@ -432,7 +449,7 @@
         </div>
 
         <div class="pc rv" style="transition-delay:.32s">
-            <div class="ptop"><img src="gs.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fas fa-chart-bar picon" style="display:none"></i><span class="pnum">08</span></div>
+            <div class="ptop"><img src="https://tse2.mm.bing.net/th/id/OIP.M0t4i_DIMgrUvBNlKyvwlwHaD_?rs=1&pid=ImgDetMain&o=7&rm=3" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fas fa-chart-bar picon" style="display:none"></i><span class="pnum">08</span></div>
             <div class="pb">
                 <h3>Olympics Data Analysis App</h3>
                 <p>Interactive web application for exploring historical Olympic Games data with dynamic visualizations, filtering, and statistical insights.</p>
